@@ -1,5 +1,6 @@
 Ohsoccer::Application.routes.draw do
-  resources :divisions
+
+  resources :fields
 
   resources :teams
 
@@ -50,6 +51,10 @@ Ohsoccer::Application.routes.draw do
 
   resources :clubs do
     resource :teams
+  end
+
+  resources :divisions do
+    resource :games
   end
   # Sample resource route with sub-resources:
   #   resources :products do

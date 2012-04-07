@@ -6,6 +6,9 @@
   <tr><td><b>Home:</b> <%= @hometeam.name %></td><td><%= @game.homescore %></td></tr>
   <tr><td><b>Away:</b> <%= @awayteam.name %></td><td><%= @game.awayscore %></td></tr>
   </table>
+  <% if @game.division_id? %>
+    <p>Division: <%= @game.division.name %></p>
+  <% end %>
   <p>Field: </p>
   <p>Notes: <%= @game.notes %></p>
   <p>Refs? </p>

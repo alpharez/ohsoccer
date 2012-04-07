@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @field.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @field.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @field.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @field.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @field.zip %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @field.status %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%= @field.game %>
+</p>
+
+
+<%= link_to 'Edit', edit_field_path(@field) %> |
+<%= link_to 'Back', fields_path %>

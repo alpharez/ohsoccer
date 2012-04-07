@@ -8,11 +8,20 @@
 <% if @division.teams.any? %>
 <h2>Teams</h2>
 <table class="table table-striped">
-<thead>
 <tr><th>Name</th><th>Wins</th><th>Losses</th><th>Ties</th></tr>
-</thead>
-<tbody>
 <%= render @teams %>
-</tbody>
 </table>
+<% end %>
+
+<% if @division.games.any? %>
+  <h2>Games</h2>
+  <table class="table table-striped">
+  <%= render @games %>
+  </table>
+<% end %>
+
+<%= form_for [@division, Game.new] do |g| %>
+<%= g.label :notes %>
+<%= g.text_area :notes %><br/>
+<%= g.submit %>
 <% end %>

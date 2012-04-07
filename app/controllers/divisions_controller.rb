@@ -15,6 +15,7 @@ class DivisionsController < ApplicationController
   def show
     @division = Division.find(params[:id])
     @teams = @division.teams
+    @games = @division.games
 
     respond_to do |format|
       format.html # show.html.erb

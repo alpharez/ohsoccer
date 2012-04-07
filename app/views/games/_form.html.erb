@@ -15,6 +15,10 @@
     <%= f.label :time %><br />
     <%= f.datetime_select :time %>
   </div>
+  <div>
+    <%= f.label :division %><br />
+    <%= select("game", "division_id", Division.all.collect{|d| [d.name, d.id ] } ) %>
+  </div>
   <div class="field">
     <%= f.label :hometeam_id %><br />
     <%= select("game", "hometeam_id", Team.all.collect {|th| [th.name, th.id ] } ) %>
