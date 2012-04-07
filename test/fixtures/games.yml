@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time: 2012-04-06 19:09:45
+  hometeam_id: 1
+  awayteam_id: 1
+  homescore: 1
+  awayscore: 1
+  cref_id: 1
+  a1ref_id: 1
+  a2ref_id: 1
+  notes: MyText
+
+two:
+  time: 2012-04-06 19:09:45
+  hometeam_id: 1
+  awayteam_id: 1
+  homescore: 1
+  awayscore: 1
+  cref_id: 1
+  a1ref_id: 1
+  a2ref_id: 1
+  notes: MyText

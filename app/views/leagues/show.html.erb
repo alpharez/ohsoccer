@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+<h2>League Management</h2>
+<p>This is where you can manage divisions and clubs in the league.</p>
+<ul>
+  <li>Add a team from a club to a division</li>
+  <li>Add edit delete divisions</li>
+  <li>Add edit delete schedules</li>
+</ul>
+<h1>
+  <%= @league.name %>
+</h1>
+
+<p>
+  <%= @league.description %>
+</p>
+
+<p>
+  <b>Clubs</b> 
+  <span class="badge badge-info"><%= @league.clubs.count %></span>
+  <br/>
+  <b>Divisions</b>
+  <span class="badge badge-info"><%= @league.divisions.count %></span>
+</p>
+
+<%= link_to 'Edit', edit_league_path(@league) %> |
+<%= link_to 'Back', leagues_path %>
+
+<div class="fluid-row">
+  <div class="span4">
+    <%= form_for [@league, Club.new] do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %><br/>
+      <%= f.label :description %>
+      <%= f.text_field :description %><br/>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="span4">
+    <%= form_for [@league, Division.new] do |d| %>
+      <%= d.label :name %>
+      <%= d.text_field :name %><br/>
+      <%= d.submit %>
+    <% end %>
+  </div>
+</div>
+
+<div class="fluid-row">
+  <div class="span4 well">
+    <% if @league.clubs.any? %>
+      <h2>Member Clubs</h2>
+      <ul>
+        <%= render @clubs %>
+      </ul>
+    <% end %>
+  </div>
+  <div class="span4 well">
+    <% if @league.divisions.any? %>
+      <h2>Divisions</h2>
+      <ul>
+        <%= render @divisions %>
+      </ul>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @division.league.name %> | <%= @division.name %></h2>
+
+<%= link_to 'Edit', edit_division_path(@division) %> |
+<%= link_to 'Back', divisions_path %>
+
+<% if @division.teams.any? %>
+<h2>Teams</h2>
+<table class="table table-striped">
+<thead>
+<tr><th>Name</th><th>Wins</th><th>Losses</th><th>Ties</th></tr>
+</thead>
+<tbody>
+<%= render @teams %>
+</tbody>
+</table>
+<% end %>

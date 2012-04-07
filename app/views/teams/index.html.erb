@@ -1,0 +1,22 @@
+<h1>Listing teams</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Division</th>
+    <th>Club</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teams.each do |team| %>
+  <tr>
+    <td><%= link_to team.name, team %></td>
+    <td><% if team.division_id? %><%= link_to team.division.name, team.division %><% end %></td>
+    <td><%= link_to team.club.name, team.club %></td>
+    <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

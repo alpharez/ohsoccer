@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div class="span4">
+  <h2><%= @game.time %></h2>
+  <table class="table">
+  <tr><td><b>Home:</b> <%= @hometeam.name %></td><td><%= @game.homescore %></td></tr>
+  <tr><td><b>Away:</b> <%= @awayteam.name %></td><td><%= @game.awayscore %></td></tr>
+  </table>
+  <p>Field: </p>
+  <p>Notes: <%= @game.notes %></p>
+  <p>Refs? </p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
+</div>

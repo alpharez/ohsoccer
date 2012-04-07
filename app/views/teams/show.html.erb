@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @team.name %>
+</h1>
+<h3>
+  <%= @team.club.name %>
+</h3>
+<p>
+  <b>Division:</b>
+  <% if @team.division_id? %>
+    <%= @team.division.name %>
+  <% else %>
+    No Division Assigned
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
+
+<h2>Roster</h2>
+<ul>
+  <li>Coach: Ed Coachman</li>
+  <li>#1 goalie</li>
+  <li>#2 defender</li>
+  <li>...</li>
+</ul>
+
+<h2>Upcoming Schedule</h2>
+<ul>
+<% @games.each do |g| %>
+  <li><%= g.time %> / <%= g.notes %></li>
+<% end %>
+</ul>

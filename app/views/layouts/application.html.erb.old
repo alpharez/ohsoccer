@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ohsoccer</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if signed_in? %>
+  <h1>Signed in</h1>
+  <h2><%= current_user.name %></h2>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div class="hero-unit">
+<h1>About Ohsoccer.org</h1>
+<p>Ohsoccer.org is a portal for everything related to soccer in Ohio.</p>
+<p>We are taking soccer management software forward.</p>
+<ul>
+  <li>Leagues</li>
+  <li>Teams</li>
+  <li>Players</li>
+  <li>Tournaments</li>
+  <li>Calendar views</li>
+  <li>Game scheduling</li>
+  <li>Field updates - comments and status slider</li>
+  <li>Referee scheduling</li>
+  <li>User profiles/security</li>
+  <li>microblogging</li>
+  <li>take payments</li>
+  <li>tournaments and applications to tournaments</li>
+</ul>
+<p>Groups: admin, league_admin, club_admin, team_admin, user</p>
+<h3 class="well">Ohsoccer.com's goal is to help people manage their soccer lives better.</h3>
+<h2>Core Values</h2>
+<ul>
+  <li>Easy to use.</li>
+  <li>Place for everything soccer-related</li>
+  <li>Help people manage soccer roles and responsibilities.</li>
+</ul>
+<p>
+The main thing we want to accomplish is to make a league that has clubs in it, which has teams.  The league shows
+the game schedules and standings.
+</p>
+<h4>Game model:</h4>
+<p>
+rails generate model Game time:datetime hometeam_id:integer awayteam_id:integer homescore:integer awayscore:integer cref_id:integer a1ref_id:integer a2ref_id:integer notes:text
+</p>
+<p>Forgot field_id and the whole fields model</p>
+</div>

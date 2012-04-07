@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div class="well">
+<h1><%= @club.name %></h1>
+<p><%= @club.description %></p>
+<% if @club.url? %>
+  <p><%= link_to @club.url, @club.url %></p>
+<% end %>
+<% if @club.league.name? %>
+  <p><%= @club.league.name %></p>
+<% end %>
+</div>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>
+
+<%= form_for [@club, Team.new] do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br/>
+<%= f.submit %>
+<% end %>
+
+<% if @club.teams.any? %>
+<h2>Teams</h2>
+<table class="table">
+<%= render @teams %>
+</table>
+<% end %>
+
