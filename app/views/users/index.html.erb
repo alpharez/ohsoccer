@@ -4,18 +4,19 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Admin?</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name %></td>
+    <td>
+      <%= link_to user.name, user %>
+      <% if user.admin? %>
+        <span class="badge badge-success">admin</span>
+      <% end %>
+    </td>
     <td><%= user.email %></td>
-    <td><%= user.admin %></td>
-    <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><% if current_user.admin? %><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
   </tr>

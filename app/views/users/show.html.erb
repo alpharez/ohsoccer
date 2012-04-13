@@ -3,6 +3,9 @@
 <p>
   <%= gravatar_for @user %>
   <h1><%= @user.name %></h1>
+  <% if @user.admin? %>
+    <span class="badge badge-success">Admin</span>
+  <% end %>
 </p>
 
 <p>
@@ -14,7 +17,6 @@
   <b>Password digest:</b>
   <%= @user.password_digest %>
 </p>
-
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

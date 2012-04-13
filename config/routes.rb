@@ -16,6 +16,8 @@ Ohsoccer::Application.routes.draw do
 
   get "pages/contact"
 
+  get "pages/information"
+
   resources :users
   resources :sessions
 
