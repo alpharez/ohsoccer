@@ -1,1 +1,6 @@
-<tr><td><%= link_to team.name, team %></td><td> <b>0</b> </td><td> <b>0</b> </td><td> <b>0</b></td></tr>
+<tr>
+  <td><%= link_to team.name, team %></td>
+  <td><%= team.games %></td>
+  <td> <%= team.wins %> - <%= team.losses %> - <%= team.ties %></td>
+  <td><b><%= team.points %></td></b>
+</tr>

@@ -14,7 +14,7 @@ class DivisionsController < ApplicationController
   # GET /divisions/1.json
   def show
     @division = Division.find(params[:id])
-    @teams = @division.teams
+    @teams = @division.teams.sort {|a,b| b.points <=> a.points} # get the teams sorted by points
     @games = @division.games
 
     respond_to do |format|

@@ -1,24 +1,5 @@
-<h1>Listing games</h1>
 
-<table class="table">
-  <tr>
-    <th>Date Time</th>
-    <th>Home Team</th>
-    <th>Away Team</th>
-    <th>Notes</th>
-    <th></th>
-  </tr>
-
-<% @games.each do |game| %>
-  <tr>
-    <td><%= link_to game.time, game %></td>
-    <td><%= game.hometeam_id %></td>
-    <td><%= game.awayteam_id %></td>
-    <td><%= link_to 'Edit', edit_game_path(game) %></td>
-    <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= render '/shared/games' %>
 
 <br />
 

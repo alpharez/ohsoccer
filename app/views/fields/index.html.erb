@@ -11,19 +11,17 @@
     <th>Game</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @fields.each do |field| %>
   <tr>
-    <td><%= field.name %></td>
+    <td><%= link_to field.name, field %></td>
     <td><%= field.address %></td>
     <td><%= field.city %></td>
     <td><%= field.state %></td>
     <td><%= field.zip %></td>
     <td><%= field.status %></td>
     <td><%= field.game %></td>
-    <td><%= link_to 'Show', field %></td>
     <td><%= link_to 'Edit', edit_field_path(field) %></td>
     <td><%= link_to 'Destroy', field, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

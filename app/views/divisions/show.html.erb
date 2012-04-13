@@ -8,20 +8,13 @@
 <% if @division.teams.any? %>
 <h2>Teams</h2>
 <table class="table table-striped">
-<tr><th>Name</th><th>Wins</th><th>Losses</th><th>Ties</th></tr>
+<tr><th>Name</th><th>Games</th><th>Record</th><th>Points</th></tr>
 <%= render @teams %>
 </table>
 <% end %>
 
-<% if @division.games.any? %>
-  <h2>Games</h2>
-  <table class="table table-striped">
-  <%= render @games %>
-  </table>
+<% if @games.any? %>
+  <%= render '/shared/games' %>
 <% end %>
 
-<%= form_for [@division, Game.new] do |g| %>
-<%= g.label :notes %>
-<%= g.text_area :notes %><br/>
-<%= g.submit %>
-<% end %>
+<%= link_to "New Game", new_game_path %>

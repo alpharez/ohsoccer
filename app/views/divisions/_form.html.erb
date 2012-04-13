@@ -15,10 +15,12 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :league %><br />
-    <%= f.text_field :league %>
+    <%= select("club", :league_id, League.all.collect {|l| [l.name, l.id ] } ) %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

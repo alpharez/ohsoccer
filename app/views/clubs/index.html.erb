@@ -8,16 +8,14 @@
     <th>League</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @clubs.each do |club| %>
   <tr>
-    <td><%= club.name %></td>
+    <td><%= link_to club.name, club %></td>
     <td><%= club.description %></td>
     <td><%= club.url %></td>
     <td><%= club.league.name %></td>
-    <td><%= link_to 'Show', club %></td>
     <td><%= link_to 'Edit', edit_club_path(club) %></td>
     <td><%= link_to 'Destroy', club, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

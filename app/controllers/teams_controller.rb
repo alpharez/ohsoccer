@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @games = Game.where("hometeam_id = ? or awayteam_id = ?", @team.id, @team.id)
+    @teams = Team.all
 
     respond_to do |format|
       format.html # show.html.erb

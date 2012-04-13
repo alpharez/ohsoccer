@@ -41,7 +41,7 @@ class ClubsController < ApplicationController
   # POST /clubs
   # POST /clubs.json
   def create
-    @league = League.find(params[:league_id])
+    @league = League.find(params[:club][:league_id])
     @club = @league.clubs.create!(params[:club])
 
     respond_to do |format|

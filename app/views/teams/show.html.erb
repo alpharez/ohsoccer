@@ -9,7 +9,7 @@
 <p>
   <b>Division:</b>
   <% if @team.division_id? %>
-    <%= @team.division.name %>
+    <%= link_to @team.division.name, @team.division %>
   <% else %>
     No Division Assigned
   <% end %>
@@ -19,16 +19,5 @@
 <%= link_to 'Back', teams_path %>
 
 <h2>Roster</h2>
-<ul>
-  <li>Coach: Ed Coachman</li>
-  <li>#1 goalie</li>
-  <li>#2 defender</li>
-  <li>...</li>
-</ul>
 
-<h2>Upcoming Schedule</h2>
-<ul>
-<% @games.each do |g| %>
-  <li><%= g.time %> / <%= g.notes %></li>
-<% end %>
-</ul>
+<%= render '/shared/games' %>

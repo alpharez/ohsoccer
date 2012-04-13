@@ -3,6 +3,7 @@ class GamesController < ApplicationController
   def index
     @leagues = League.all
     @games = Game.all
+    @teams = Team.all
 
     respond_to do |format|
       format.html # index.html.erb
