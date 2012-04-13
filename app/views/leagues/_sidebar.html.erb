@@ -1,0 +1,21 @@
+<div class="span3">
+<ul class="nav nav-list">
+<li class="nav-header">MOSSL Links</li>
+<li><%= link_to "MOSSL Info", '#' %></li>
+<li><%= link_to "Divisions", divisions_path %></li>
+<li><%= link_to "Fields", fields_path %></li>
+<li><%= link_to "Clubs", clubs_path %></li>
+<li><%= link_to "Teams", teams_path %></li>
+<li><%= link_to "Games", games_path %></li>
+<li><%= link_to "Forms", '#' %></li>
+<li><%= link_to "Coaches", '#' %></li>
+<li><%= link_to "Referees", '#' %></li>
+<li><%= link_to "Tournaments", '#' %></li>
+<li><%= link_to "ODP Info", '#' %></li>
+<li><%= link_to "Tryouts", '#' %></li>
+<% if @league.divisions.any? %>
+<li class="nav-header">Divisions</li>
+<%= render @divisions %>
+<% end %>
+
+</div>

@@ -1,0 +1,6 @@
+<li>
+  <h3><%= post.title %></h3>
+  <p><%= post.body %></p>
+  <span class="label label-info">Tag1</span><br />
+  <small><%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %>.</small>
+</li>

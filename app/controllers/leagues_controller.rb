@@ -16,6 +16,7 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
     @clubs = @league.clubs
     @divisions = @league.divisions
+    @posts = Post.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @league }
