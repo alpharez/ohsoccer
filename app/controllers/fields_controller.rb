@@ -14,6 +14,7 @@ class FieldsController < ApplicationController
   # GET /fields/1.json
   def show
     @field = Field.find(params[:id])
+    @games = @field.games
 
     respond_to do |format|
       format.html # show.html.erb

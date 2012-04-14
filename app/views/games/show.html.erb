@@ -6,12 +6,17 @@
   <tr><td><b>Home:</b> <%= @hometeam.name %></td><td><%= @game.homescore %></td></tr>
   <tr><td><b>Away:</b> <%= @awayteam.name %></td><td><%= @game.awayscore %></td></tr>
   </table>
+
+  <table class="table">
   <% if @game.division_id? %>
-    <p>Division: <%= @game.division.name %></p>
+    <tr><th>Division</th><td><%= link_to @game.division.name, @game.division %></td></tr>
   <% end %>
-  <p>Field: </p>
-  <p>Notes: <%= @game.notes %></p>
-  <p>Refs? </p>
+  <% if @game.field_id? %>
+    <tr><th>Field</th><td> <%= link_to @game.field.name, @game.field %> <%= @game.fieldname %></td></tr>
+  <% end %>
+  <tr><th>Notes</th><td> <%= @game.notes %></td></tr>
+  <tr><th>Referees</th><td> </td></tr>
+  </table>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

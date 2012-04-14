@@ -1,4 +1,9 @@
-<h1>Listing clubs</h1>
+<p id="notice"><%= notice %></p>
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Clubs", clubs_path %> <span class="divider">|</span>
+  </li>
+</ul>
 
 <table class="table">
   <tr>
@@ -14,7 +19,7 @@
   <tr>
     <td><%= link_to club.name, club %></td>
     <td><%= club.description %></td>
-    <td><%= club.url %></td>
+    <td><%= link_to club.url, club.url %></td>
     <td><%= club.league.name %></td>
     <td><%= link_to 'Edit', edit_club_path(club) %></td>
     <td><%= link_to 'Destroy', club, :confirm => 'Are you sure?', :method => :delete %></td>

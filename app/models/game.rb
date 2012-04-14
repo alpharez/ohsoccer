@@ -2,7 +2,7 @@ class Game < ActiveRecord::Base
   belongs_to :hometeam, :class_name => "Team", :foreign_key => "hometeam_id"
   belongs_to :awayteam, :class_name => "Team", :foreign_key => "awayteam_id"
   belongs_to :division
-  has_one :field
+  belongs_to :field
 
   default_scope :order => 'games.time'
 

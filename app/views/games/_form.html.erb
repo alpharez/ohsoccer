@@ -28,6 +28,14 @@
     <%= select("game", "awayteam_id", Team.all.collect {|ta| [ta.name, ta.id ] } ) %>
   </div>
   <div>
+    <%= f.label :field %><br />
+    <%= select("game", "field_id", Field.all.collect{|fld| [fld.name, fld.id ] } ) %>
+  </div>
+  <div>
+    <%= f.label :fieldname %><br />
+    <%= f.text_field :fieldname %>
+  </div>
+  <div>
     <%= f.label :homescore %><br />
     <%= f.text_field :homescore %>
   </div>

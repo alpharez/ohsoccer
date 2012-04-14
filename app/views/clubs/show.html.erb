@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Clubs", clubs_path %> <span class="divider">|</span>
+  </li>
+  <li>
+    <%= @club.name %>
+  </li>
+</ul>
 
 <div class="well">
 <h1><%= @club.name %></h1>
