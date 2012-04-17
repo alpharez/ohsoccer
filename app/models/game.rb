@@ -40,4 +40,7 @@ class Game < ActiveRecord::Base
     end
   end
 
+  validates :time, :presence => true
+  validates :hometeam, :presence => true
+  validates :awayteam, :presence => true
 end

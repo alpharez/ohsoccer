@@ -17,7 +17,12 @@
 
 <% @clubs.each do |club| %>
   <tr>
-    <td><%= link_to club.name, club %></td>
+    <td>
+      <% if club.logourl? %>
+        <%= image_tag(club.logourl, :width => "30") %>
+      <% end %>
+      <%= link_to club.name, club %>
+    </td>
     <td><%= club.description %></td>
     <td><%= link_to club.url, club.url %></td>
     <td><%= club.league.name %></td>

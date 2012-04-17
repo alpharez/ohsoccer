@@ -11,6 +11,11 @@
 <div class="well">
 <h1><%= @club.name %></h1>
 <p><%= @club.description %></p>
+<p>
+  <% if @club.logourl? %>
+    <%= image_tag(@club.logourl, :width => "50") %>
+  <% end %>
+</p>
 <% if @club.url? %>
   <p><%= link_to @club.url, @club.url %></p>
 <% end %>
@@ -35,3 +40,5 @@
 </table>
 <% end %>
 
+<h2>Balance Due: $0.00 </h2>
+<h2>Payment History</h2>

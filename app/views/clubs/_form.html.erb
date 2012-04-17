@@ -23,6 +23,10 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div>
+  <div>
+    <%= f.label :logourl %>
+    <%= f.text_field :logourl %>
+  </div>
   <div class="field">
     <%= f.label :league %><br />
     <%= select("club", "league_id", League.all.collect {|l| [l.name, l.id ] } ) %>

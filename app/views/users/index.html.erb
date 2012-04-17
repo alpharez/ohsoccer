@@ -3,7 +3,6 @@
 <table class="table table-condensed"> 
   <tr>
     <th>Name</th>
-    <th>Email</th>
     <th></th>
     <th></th>
   </tr>
@@ -16,9 +15,10 @@
         <span class="badge badge-success">admin</span>
       <% end %>
     </td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><% if current_user.admin? %><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
+    <% if current_user != nil %>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><% if current_user.admin? %><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
@@ -26,16 +26,30 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
-
-<h3>Badges</h3>
-<ul class="unstyled">
-  <li><span class="badge badge-info">coach</span></li>
-  <li><span class="badge badge-info">referee</span></li>
-  <li><span class="badge badge-inverse">player</span</li>
-  <li><span class="badge badge-success">site admin</span></li>
-  <li><span class="badge badge-success">league admin</span></li>
-  <li><span class="badge badge-success">team admin</span></li>
-  <li><span class="badge badge-warning">club director</span</li>
-  <li><span class="badge badge-error">banned</span></li>
-  <li><span class="badge badge-error">perma-banned</span></li>
-</ul>
+<div class="row">
+  <div class="span3">
+  <h3>Badges</h3>
+  <ul class="unstyled">
+    <li><span class="badge badge-info">coach</span></li>
+    <li><span class="badge badge-info">referee</span></li>
+    <li><span class="badge badge-inverse">player</span</li>
+    <li><span class="badge badge-success">site admin</span></li>
+    <li><span class="badge badge-success">league admin</span></li>
+    <li><span class="badge badge-success">team admin</span></li>
+    <li><span class="badge badge-warning">club director</span</li>
+    <li><span class="badge badge-error">banned</span></li>
+    <li><span class="badge badge-error">perma-banned</span></li>
+  </ul>
+  </div>
+  <div class="span3">
+  <h3>Player Badges</h3>
+  <ul class="unstyled">
+    <li><span class="badge">juggle</span></li>
+    <li><span class="badge">dribble</span></li>
+    <li><span class="badge">forward</span></li>
+    <li><span class="badge">midfielder</span></li>
+    <li><span class="badge">defender</span></li>
+    <li><span class="badge">goalie</span></li>
+  </ul>
+  </div>
+</div>
