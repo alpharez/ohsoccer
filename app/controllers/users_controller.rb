@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  load_and_authorize_resource
+
   # GET /users
   # GET /users.json
   def index
@@ -25,6 +28,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @roles = Role.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +39,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @roles = Role.all
   end
 
   # POST /users

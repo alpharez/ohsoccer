@@ -10,6 +10,8 @@ Ohsoccer::Application.routes.draw do
 
   resources :games
 
+  resources :roles
+
   get "pages/home"
 
   get "pages/about"

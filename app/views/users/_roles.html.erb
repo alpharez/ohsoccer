@@ -1,0 +1,13 @@
+# show roles
+<% if @user.admin? %>
+<span class="badge badge-success">admin</span>
+<% end %>
+<% if @user.has_role? :admin %>
+<span class="badge badge-success">site admin</span>
+<% end %>
+<% if @user.has_role? :coach %>
+<span class="badge badge-info">coach</span>
+<% end %>
+<% if @user.has_role? :referee %>
+<span class="badge badge-info">referee</span>
+<% end %>

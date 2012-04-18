@@ -26,6 +26,15 @@
     <%= f.label :admin %>
     <%= f.check_box :admin %>
   </div>
+  <div>
+    <% if @roles != nil %>
+      <% for role in @roles %>
+        <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+        <%= role.name %>
+      <% end %>
+    <% end %>
+    <%= hidden_field_tag "user[role_ids][]", "" %>
+  </div>
   <div class="controls">
     <%= f.submit %>
   </div>
