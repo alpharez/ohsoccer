@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :assignments
   has_many :roles, :through => :assignments
-  belongs_to :team
+  has_many :team_assignments
+  has_many :teams, :through => :team_assignments
+  belongs_to :club
 
   validates :name, :presence => true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

@@ -1,3 +1,12 @@
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Fields", fields_path %> <span class="divider">|</span>
+  </li>
+  <li>
+    <%= link_to @field.name, @field %>
+  </li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 
 <h1><%= @field.name %></h1>

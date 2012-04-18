@@ -1,4 +1,8 @@
-<h1>Listing users</h1>
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Users", users_path %> <span class="divider">|</span>
+  </li>
+</ul>
 
 <table class="table table-condensed"> 
 
@@ -19,6 +23,16 @@
       <% if user.has_role? :player %>
         <span class="badge badge-inverse">player</span>
       <% end %>
+      <% if user.has_role? :club_director %>
+        <span class="badge badge-warning">club director</span>
+      <% end %>
+      <% if user.has_role? :team_admin %>
+        <span class="badge badge-success">team admin</span>
+      <% end %>
+
+    <% if user.club != nil %>
+        <%= image_tag(user.club.logourl, :width => "30") %>
+    <% end %>
     </td>
     <% if current_user != nil %>
       <% if current_user.has_role? :admin %>

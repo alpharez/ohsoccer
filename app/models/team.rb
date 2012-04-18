@@ -4,7 +4,8 @@ class Team < ActiveRecord::Base
   has_many :homegames, :class_name => "Game", :foreign_key => "hometeam_id"
   has_many :awaygames, :class_name => "Game", :foreign_key => "awayteam_id"
   has_many :games
-  has_many :users
+  has_many :team_assignments
+  has_many :users, :through => :team_assignments
 
   def wins
     homegames.select{ |hg| hg.winner == self }.size + awaygames.select { |ag| ag.winner == self }.size

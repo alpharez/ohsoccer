@@ -1,0 +1,21 @@
+<tr>
+  <td><%= gravatar_for user %>
+  <%= link_to user.name, user %>
+      <% if user.has_role? :admin %>
+        <span class="badge badge-success">site admin</span>
+      <% end %>
+      <% if user.has_role? :coach %>
+        <span class="badge badge-info">coach</span>
+      <% end %>
+      <% if user.has_role? :referee %>
+        <span class="badge badge-info">referee</span>
+      <% end %>
+      <% if user.has_role? :player %>
+        <span class="badge badge-inverse">player</span>
+      <% end %>
+      <% if user.has_role? :club_director %>
+        <span class="badge badge-warning">club director</span>
+      <% end %>
+
+</td>
+</tr>

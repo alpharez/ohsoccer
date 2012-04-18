@@ -1,3 +1,12 @@
+<ul class="breadcrumb">
+  <li>
+    <%= link_to "Users", users_path %> <span class="divider">|</span>
+  </li>
+  <li>
+    <%= link_to @user.name, @user %>
+  </li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,7 +24,17 @@
   <% if @user.has_role? :player %>
     <span class="badge badge-inverse">player</span>
   <% end %>
+  <% if @user.has_role? :team_admin %>
+    <span class="badge badge-success">team admin</span>
+  <% end %>
 </p>
+
+<% if @user.club != nil %>
+  <p>
+    <%= image_tag(@user.club.logourl, :width => "50") %>
+    <%= link_to @user.club.name, @user.club %>
+  </p>
+<% end %>
 
 <p>
   <b>Email:</b>

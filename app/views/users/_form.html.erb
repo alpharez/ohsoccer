@@ -16,6 +16,12 @@
   <div class="controls">
     <%= f.text_field :email, :placeholder => "Email", :class => "input-xlarge" %>
   </div>
+
+  <div class="field">
+    <%= f.label :club %><br />
+    <%= select("user", :club_id, Club.all.collect {|c| [c.name, c.id ] } ) %>
+  </div>
+
   <div class="controls">
     <%= f.password_field :password, :placeholder => "Password", :class => "input-xlarge" %>
   </div>

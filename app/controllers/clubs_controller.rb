@@ -15,6 +15,7 @@ class ClubsController < ApplicationController
   def show
     @club = Club.find(params[:id])
     @teams = @club.teams
+    @users = @club.users
 
     respond_to do |format|
       format.html # show.html.erb

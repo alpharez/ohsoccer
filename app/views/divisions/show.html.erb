@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <ul class="breadcrumb">
   <li>
     <%= link_to "Divisions", divisions_path %> <span class="divider">|</span>
@@ -8,6 +6,8 @@
     <%= @division.name %>
   </li>
 </ul>
+
+<p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_division_path(@division) %> |
 <%= link_to 'Back', divisions_path %>
